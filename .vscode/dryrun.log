@@ -1,0 +1,12 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/haihuaxie/personal/codes/go-code/vegeta'
+go mod vendor
+go get -u github.com/mailru/easyjson/...
+go generate ./...
+ 
+fatal: no tag exactly matches 'd73edf2bc2663d83848da2a97a8401a7ed1440bc'
+
+CGO_ENABLED=0 go build -v -a -tags=netgo \
+  	-ldflags '-s -w -extldflags "-static" -X main.Version= -X main.Commit=d73edf2bc2663d83848da2a97a8401a7ed1440bc -X main.Date=2022-06-15T19:34:14Z+0800'
+make: Leaving directory `/Users/haihuaxie/personal/codes/go-code/vegeta'
+ 

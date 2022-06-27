@@ -209,6 +209,7 @@ func NewJSONTargetEncoder(w io.Writer) TargetEncoder {
 
 // NewStaticTargeter returns a Targeter which round-robins over the passed
 // Targets.
+// NewStaticTargeter 返回一个闭包函数，每调用一次返回的闭包函数，便得到一个target
 func NewStaticTargeter(tgts ...Target) Targeter {
 	i := int64(-1)
 	return func(tgt *Target) error {
